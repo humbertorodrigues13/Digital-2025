@@ -12,7 +12,7 @@
   <meta property="og:title" content="Humberto Rodrigues - Consultor de Vendas APA Móveis"/>
   <meta property="og:description" content="Móveis que transformam seu lar! Fale comigo e encontre o ideal para você."/>
   <meta property="og:image" content="https://i.supaimg.com/7cabd937-549e-4175-8cd6-3b6fa61226a0.jpg"/> <!-- Use a URL da sua foto de perfil -->
-  <meta property="og:url" content="https://humbertorodrigues13.github.io/VENDAS-HUMBERTO/"/> <!-- URL REAL DO CARTÃO ATUALIZADA AQUI -->
+  <meta property="og:url" content="https://humbertorodrigues13.github.io/Digital-2025/"/> <!-- URL REAL DO CARTÃO -->
   <meta property="og:type" content="profile"/>
   <meta property="og:site_name" content="Cartão de Vendas Digital"/>
 
@@ -32,98 +32,8 @@
   <!-- QRious library for QR code generation -->
   <script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js"></script>
 
-  <style>
-    /* Configurações de variáveis CSS (serão definidas pelo JS com base no tema) */
-    :root {
-      --primary-color: #10B981;
-      --dark-primary-color: #059669;
-      --light-bg-color: #F0FDF4;
-      --gradient-start: #D1FAE5;
-      --gradient-end: #A7F3D0;
-      --text-color: #374151;
-      --text-light-color: #6B7280;
-      --primary-color-rgb: 16, 185, 129;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      @apply min-h-screen flex items-center justify-center p-4;
-      height: 100%; /* Garante que o body ocupe 100% da altura da viewport */
-      background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-      transition: background 0.3s ease; /* Transição suave para o background */
-    }
-
-    /* Estilos customizados para o cartão */
-    .card-custom-shadow {
-      box-shadow: 0 20px 50px rgba(var(--primary-color-rgb), 0.2); /* Sombra com cor do tema */
-      transition: box-shadow 0.3s ease; /* Transição suave para a sombra */
-    }
-
-    /* Efeito de brilho nos botões */
-    .button-shine::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.3);
-      transform: skewX(-30deg);
-      transition: all 0.6s ease;
-    }
-
-    .button-shine:hover::after {
-      left: 100%;
-    }
-
-    /* Animação para a mensagem */
-    @keyframes slideInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .message-animation {
-      animation: slideInUp 0.5s ease-out forwards;
-    }
-
-    /* Animação de pulsação lenta para o fundo da foto de perfil */
-    @keyframes pulse-slow {
-      0%, 100% { transform: scale(1); opacity: 0.2; }
-      50% { transform: scale(1.1); opacity: 0.4; }
-    }
-    .animate-pulse-slow {
-      animation: pulse-slow 4s infinite ease-in-out;
-    }
-
-    /* Animação de "bounce" para a foto de perfil */
-    @keyframes bounce-once {
-      0%, 100% { transform: translateY(0); }
-      25% { transform: translateY(-10px); }
-      50% { transform: translateY(0); }
-      75% { transform: translateY(-5px); }
-    }
-    .animate-bounce-once {
-      animation: bounce-once 1s ease-in-out;
-    }
-
-    /* Estilos para modais (apenas QR Code agora) */
-    .modal-overlay {
-      @apply fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50;
-    }
-    .modal-content {
-      @apply bg-white p-6 rounded-lg shadow-xl text-center relative max-w-lg w-11/12; /* Ajuste para responsividade */
-      animation: fadeInScale 0.3s ease-out forwards;
-    }
-    .modal-close {
-      @apply absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-2xl cursor-pointer;
-    }
-  </style>
+  <!-- Link para o seu arquivo CSS externo -->
+  <link rel="stylesheet" href="style.css"> 
 </head>
 <body class="antialiased">
   <div class="card-custom-shadow bg-white rounded-3xl p-12 max-w-2xl w-full text-center relative overflow-hidden transform transition-all duration-500 hover:scale-[1.01]">
@@ -137,12 +47,11 @@
 
     <!-- Container da foto de perfil -->
     <div class="relative w-32 h-32 mx-auto -mt-10 mb-6 rounded-full border-4 border-white shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105" onclick="moveProfilePic()">
-      <!-- Foto de Perfil com Fallback de Imagem -->
+      <!-- FOTO DE PERFIL: VERIFIQUE E SUBSTITUA A URL ABAIXO SE NECESSÁRIO -->
       <img class="profile-pic w-full h-full object-cover rounded-full transition-transform duration-500 hover:scale-110" 
            src="https://i.supaimg.com/7cabd937-549e-4175-8cd6-3b6fa61226a0.jpg" 
            alt="Foto de Perfil de Humberto Rodrigues"
-           onerror="this.onerror=null;this.src='https://placehold.co/120x120/10B981/ffffff?text=Foto';"
-      >
+           > <!-- ATRIBUTO onerror REMOVIDO -->
       <!-- Efeito de pulsação sutil atrás da foto -->
       <div class="absolute inset-0 rounded-full opacity-20 animate-pulse-slow z-0" style="background-color: var(--primary-color);"></div>
     </div>
@@ -150,7 +59,7 @@
     <h1 class="text-3xl font-bold mb-2" style="color: var(--text-color);">Humberto Rodrigues</h1>
     <h2 class="text-lg font-medium mb-4" style="color: var(--text-light-color);">Consultor de Vendas</h2>
     
-    <!-- Slogan Atualizado -->
+    <!-- Slogan -->
     <p class="text-base text-gray-700 mb-6" style="color: var(--text-color);">Transformando lares com estilo e conforto.</p>
 
     <!-- Botão para o Vídeo de Apresentação (link direto) -->
@@ -214,168 +123,12 @@
     <div class="modal-content">
       <span id="qrModalClose" class="modal-close">&times;</span>
       <h3 class="text-2xl font-bold mb-4" style="color: var(--primary-color);">Escaneie para Salvar o Cartão!</h3>
-      <canvas id="qrCodeCanvas" class="w-48 h-48 mx-auto border border-gray-300 rounded-lg"></canvas>
+      <canvas id="qrCodeCanvas" class="w-48 h-48 mx-auto border border-gray-300 rounded-lg" width="200" height="200"></canvas> <!-- LARGURA E ALTURA EXPLICITAS AQUI -->
       <p class="text-sm text-gray-500 mt-2">Compartilhe este QR Code para acesso rápido.</p>
     </div>
   </div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const root = document.documentElement;
-      const themeToggleButton = document.getElementById('themeToggleButton');
-      const whatsappButton = document.getElementById('whatsappButton');
-      const messageElement = document.getElementById('message');
-      const callButton = document.getElementById('callButton');
-      const callMessage = document.getElementById('callMessage');
-      const qrCodeButton = document.getElementById('qrCodeButton');
-      const qrCodeModal = document.getElementById('qrCodeModal');
-      const qrModalClose = document.getElementById('qrModalClose');
-      const qrCodeCanvas = document.getElementById('qrCodeCanvas');
-
-      // --- Definição dos Temas ---
-      const themes = [
-        {
-          name: 'green',
-          '--primary-color': '#10B981', // Tailwind green-500
-          '--dark-primary-color': '#059669', // Tailwind green-600
-          '--light-bg-color': '#F0FDF4', // Tailwind green-50
-          '--gradient-start': '#D1FAE5', // Tailwind green-100
-          '--gradient-end': '#A7F3D0', // Tailwind emerald-200
-          '--text-color': '#374151', // Tailwind gray-700
-          '--text-light-color': '#6B7280', // Tailwind gray-500
-          '--primary-color-rgb': '16, 185, 129' // RGB para a sombra
-        },
-        {
-          name: 'blue',
-          '--primary-color': '#3B82F6', // Tailwind blue-500
-          '--dark-primary-color': '#2563EB', // Tailwind blue-600
-          '--light-bg-color': '#EFF6FF', // Tailwind blue-50
-          '--gradient-start': '#DBEAFE', // Tailwind blue-100
-          '--gradient-end': '#BFDBFE', // Tailwind blue-200
-          '--text-color': '#1F2937', // Tailwind gray-800
-          '--text-light-color': '#4B5563', // Tailwind gray-600
-          '--primary-color-rgb': '59, 130, 246'
-        },
-        {
-          name: 'purple',
-          '--primary-color': '#A855F7', // Tailwind purple-500
-          '--dark-primary-color': '#9333EA', // Tailwind purple-600
-          '--light-bg-color': '#F5F3FF', // Tailwind purple-50
-          '--gradient-start': '#EDE9FE', // Tailwind purple-100
-          '--gradient-end': '#DDD6FE', // Tailwind purple-200
-          '--text-color': '#4B5563', // Tailwind gray-600
-          '--text-light-color': '#6B7280', // Tailwind gray-500
-          '--primary-color-rgb': '168, 85, 247'
-        }
-      ];
-
-      let qrcode = null; // Para armazenar a instância do QRious
-      let currentThemeIndex = 0;
-
-      // Função para aplicar um tema
-      function applyTheme() {
-        const currentTheme = themes[currentThemeIndex];
-
-        for (const [key, value] of Object.entries(currentTheme)) {
-          if (key.startsWith('--')) { // Aplica apenas variáveis CSS
-            root.style.setProperty(key, value);
-          }
-        }
-        // Atualiza a sombra do cartão dinamicamente
-        document.querySelector('.card-custom-shadow').style.boxShadow = `0 20px 50px rgba(${currentTheme['--primary-color-rgb']}, 0.2)`;
-      }
-
-      // Carrega o tema salvo ou o tema padrão
-      const savedThemeIndex = localStorage.getItem('selectedThemeIndex');
-      if (savedThemeIndex !== null && themes[parseInt(savedThemeIndex)]) {
-        currentThemeIndex = parseInt(savedThemeIndex);
-      }
-      
-      applyTheme(); // Aplica o tema inicial corretamente
-
-      // Event listeners
-      themeToggleButton.addEventListener('click', () => {
-        currentThemeIndex = (currentThemeIndex + 1) % themes.length;
-        localStorage.setItem('selectedThemeIndex', currentThemeIndex);
-        applyTheme(); // Reaplica o tema com o novo tema
-        // Se o modal do QR code estiver aberto, atualiza a cor do QR code
-        if (!qrCodeModal.classList.contains('hidden') && qrcode) {
-          qrcode.set({ foreground: themes[currentThemeIndex]['--primary-color'] });
-        }
-      });
-
-      // --- Lógica do Botão WhatsApp ---
-      whatsappButton.addEventListener('click', function() {
-        messageElement.classList.remove('hidden');
-        messageElement.classList.add('message-animation');
-      });
-
-      // --- Lógica do Botão Ligar Agora ---
-      callButton.addEventListener('click', function() {
-        callMessage.classList.remove('hidden');
-        callMessage.classList.add('message-animation');
-        setTimeout(() => {
-          callMessage.classList.add('hidden');
-          callMessage.classList.remove('message-animation');
-        }, 3000); // Esconde a mensagem após 3 segundos
-      });
-
-
-      // --- Lógica do QR Code ---
-      qrCodeButton.addEventListener('click', () => {
-        qrCodeModal.classList.remove('hidden'); // Mostra o modal
-
-        // Pequeno atraso para garantir que o modal esteja renderizado e o canvas tenha dimensões
-        setTimeout(() => {
-          // A URL para o QR Code agora é a URL REAL do seu cartão no GitHub Pages
-          const currentUrl = "https://humbertorodrigues13.github.io/VENDAS-HUMBERTO/"; 
-          const currentPrimaryColor = themes[currentThemeIndex]['--primary-color']; // Captura a cor atual
-
-          console.log('Tentando gerar QR Code para URL:', currentUrl);
-          console.log('Usando cor primária:', currentPrimaryColor);
-
-          if (!qrcode) {
-            qrcode = new QRious({
-              element: qrCodeCanvas,
-              value: currentUrl, // Garante que a URL é a atual
-              size: 200,
-              padding: 10,
-              foreground: currentPrimaryColor
-            });
-            console.log('Nova instância QRious criada.');
-          } else {
-            // Atualiza o QR code existente com a nova URL e cor
-            qrcode.set({
-              value: currentUrl,
-              foreground: currentPrimaryColor
-            });
-            console.log('Instância QRious existente atualizada.');
-          }
-        }, 50); // Atraso de 50ms
-      });
-
-      qrModalClose.addEventListener('click', () => {
-        qrCodeModal.classList.add('hidden');
-      });
-
-      // Fechar modal clicando fora
-      qrCodeModal.addEventListener('click', (e) => {
-        if (e.target === qrCodeModal) {
-          qrCodeModal.classList.add('hidden');
-        }
-      });
-
-      // --- Animação da Foto de Perfil ---
-      function moveProfilePic() {
-        const profilePicContainer = document.querySelector('.profile-pic-container');
-        profilePicContainer.classList.add('animate-bounce-once');
-        setTimeout(() => {
-          profilePicContainer.classList.remove('animate-bounce-once');
-        }, 1000);
-      }
-      // Torna a função global para ser acessível via onclick no HTML
-      window.moveProfilePic = moveProfilePic;
-    });
-  </script>
+  <!-- Link para o seu arquivo JavaScript externo -->
+  <script src="script.js"></script>
 </body>
 </html>
