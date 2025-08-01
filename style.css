@@ -1,4 +1,4 @@
-/* Configurações de variáveis CSS (serão definidas pelo JS com base no tema) */
+/* Variáveis de cores */
 :root {
   --primary-color: #10B981;
   --dark-primary-color: #059669;
@@ -10,21 +10,25 @@
   --primary-color-rgb: 16, 185, 129;
 }
 
+/* Ocultar elementos com esta classe */
+.hidden {
+  display: none !important;
+}
+
 body {
   font-family: 'Inter', sans-serif;
-  /* Tailwind classes applied directly in HTML for responsiveness */
-  height: 100%; /* Garante que o body ocupe 100% da altura da viewport */
+  height: 100%;
   background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-  transition: background 0.3s ease; /* Transição suave para o background */
+  transition: background 0.3s ease;
 }
 
-/* Estilos customizados para o cartão */
+/* Cartão com sombra */
 .card-custom-shadow {
-  box-shadow: 0 20px 50px rgba(var(--primary-color-rgb), 0.2); /* Sombra com cor do tema */
-  transition: box-shadow 0.3s ease; /* Transição suave para a sombra */
+  box-shadow: 0 20px 50px rgba(var(--primary-color-rgb), 0.2);
+  transition: box-shadow 0.3s ease;
 }
 
-/* Efeito de brilho nos botões */
+/* Brilho nos botões */
 .button-shine::after {
   content: '';
   position: absolute;
@@ -36,12 +40,12 @@ body {
   transform: skewX(-30deg);
   transition: all 0.6s ease;
 }
-
 .button-shine:hover::after {
   left: 100%;
 }
 
-/* Animação para a mensagem */
+/* Animações */
+
 @keyframes slideInUp {
   from {
     opacity: 0;
@@ -52,21 +56,10 @@ body {
     transform: translateY(0);
   }
 }
-
 .message-animation {
   animation: slideInUp 0.5s ease-out forwards;
 }
 
-/* Animação de pulsação lenta para o fundo da foto de perfil */
-@keyframes pulse-slow {
-  0%, 100% { transform: scale(1); opacity: 0.2; }
-  50% { transform: scale(1.1); opacity: 0.4; }
-}
-.animate-pulse-slow {
-  animation: pulse-slow 4s infinite ease-in-out;
-}
-
-/* Animação de "bounce" para a foto de perfil */
 @keyframes bounce-once {
   0%, 100% { transform: translateY(0); }
   25% { transform: translateY(-10px); }
@@ -77,36 +70,62 @@ body {
   animation: bounce-once 1s ease-in-out;
 }
 
-/* Estilos para modais (apenas QR Code agora) */
+@keyframes golden-glow {
+  0%, 100% { 
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.5),
+                  0 0 10px rgba(255, 215, 0, 0.5);
+  }
+  50% { 
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.8),
+                  0 0 20px rgba(255, 215, 0, 0.8);
+  }
+}
+.golden-text {
+  background: linear-gradient(
+    180deg,
+    #ffd700,
+    #ffc107,
+    #b8860b
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: #ffd700;
+  font-weight: 700;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  animation: golden-glow 2.5s ease-in-out infinite;
+}
+
+/* Modal QR Code */
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0,0,0,0.5);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 50;
-  display: none; /* Garante que o modal esteja oculto por padrão */
+  display: none;
 }
 .modal-content {
   background-color: white;
-  padding: 1.5rem; /* p-6 */
-  border-radius: 0.5rem; /* rounded-lg */
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-xl */
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
   text-align: center;
   position: relative;
-  max-width: 32rem; /* max-w-lg */
-  width: 91.666667%; /* w-11/12 */
+  max-width: 32rem;
+  width: 91.666667%;
   animation: fadeInScale 0.3s ease-out forwards;
 }
 .modal-close {
   position: absolute;
-  top: 0.5rem; /* top-2 */
-  right: 0.5rem; /* right-2 */
-  color: #6B7280; /* text-gray-500 */
+  top: 0.5rem;
+  right: 0.5rem;
+  color: #6B7280;
   cursor: pointer;
-  font-size: 1.5rem; /* text-2xl */
+  font-size: 1.5rem;
 }
 .modal-close:hover {
-  color: #374151; /* hover:text-gray-700 */
+  color: #374151;
 }
