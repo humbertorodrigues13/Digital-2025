@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Versículos da Bíblia ---
   const bibleVerses = [
-    // Fé e Confiança
+    // (A lista completa de versículos que você já tinha)
     "Ora, a fé é a certeza daquilo que esperamos e a prova das coisas que não vemos. - Hebreus 11:1",
     "Pois vivemos por fé, e não pelo que vemos. - 2 Coríntios 5:7",
     "Consequentemente, a fé vem por ouvir a mensagem, e a mensagem é ouvida mediante a palavra de Cristo. - Romanos 10:17",
@@ -27,8 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
     "Não se perturbe o coração de vocês. Creiam em Deus; creiam também em mim. - João 14:1",
     "Não andem ansiosos por coisa alguma, mas em tudo, pela oração e súplicas, e com ação de graças, apresentem seus pedidos a Deus. E a paz de Deus, que excede todo o entendimento, guardará o coração e a mente de vocês em Cristo Jesus. - Filipenses 4:6-7",
     "Quando estiver com medo, confiarei em ti. - Salmos 56:3",
-
-    // Amor e Compaixão
     "Porque Deus tanto amou o mundo que deu o seu Filho Unigênito, para que todo o que nele crer não pereça, mas tenha a vida eterna. - João 3:16",
     "O amor é paciente, o amor é bondoso. Não inveja, não se vangloria, não se orgulha. Não maltrata, não procura os seus interesses, não se ira facilmente, não guarda rancor. O amor não se alegra com a injustiça, mas se alegra com a verdade. Tudo sofre, tudo crê, tudo espera, tudo suporta. - 1 Coríntios 13:4-7",
     "Amados, amemo-nos uns aos outros, pois o amor procede de Deus. Aquele que ama é nascido de Deus e o conhece. Quem não ama não conhece a Deus, porque Deus é amor. - 1 João 4:7-8",
@@ -39,8 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
     "Mas o fruto do Espírito é amor, alegria, paz, paciência, amabilidade, bondade, fidelidade, mansidão e domínio próprio. - Gálatas 5:22-23",
     "Acima de tudo, amem-se sinceramente, pois o amor perdoa muitíssimos pecados. - 1 Pedro 4:8",
     "O ódio provoca dissensão, mas o amor cobre todos os pecados. - Provérbios 10:12",
-
-    // Esperança e Consolo
     "Porque sou eu que conheço os planos que tenho para vocês', diz o Senhor, 'planos de fazê-los prosperar e não de lhes causar dano, planos de dar-lhes esperança e um futuro'. - Jeremias 29:11",
     "Sabemos que Deus age em todas as coisas para o bem daqueles que o amam, dos que foram chamados de acordo com o seu propósito. - Romanos 8:28",
     "Deus é o nosso refúgio e a nossa fortaleza, auxílio sempre presente na adversidade. - Salmos 46:1",
@@ -51,8 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
     "Ele o encherá de riso e os seus lábios de brados de alegria. - Jó 8:21",
     "O Senhor é bom, um refúgio em tempos de angústia. Ele protege os que nele confiam. - Naum 1:7",
     "Que o Deus da esperança os encha de toda alegria e paz, por meio da fé, para que vocês transbordem de esperança, pelo poder do Espírito Santo. - Romanos 15:13",
-
-    // Força e Coragem
     "Não fui eu que lhe ordenei? Seja forte e corajoso! Não se apavore nem desanime, pois o Senhor, o seu Deus, estará com você por onde você andar. - Josué 1:9",
     "Tudo posso naquele que me fortalece. - Filipenses 4:13",
     "Mesmo quando eu andar por um vale de trevas e morte, não temerei perigo algum, pois tu estás comigo; a tua vara e o teu cajado me protegem. - Salmos 23:4",
@@ -63,8 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
     "O meu corpo e o meu coração poderão fraquejar, mas Deus é a força do meu coração e a minha herança para sempre. - Salmos 73:26",
     "Não se entristeçam, porque a alegria do Senhor é a força de vocês. - Neemias 8:10",
     "Finalmente, fortaleçam-se no Senhor e no seu forte poder. - Efésios 6:10",
-
-    // Sabedoria e Orientação
     "Pois o Senhor é quem dá sabedoria; de sua boca vêm o conhecimento e o entendimento. - Provérbios 2:6",
     "Se algum de vocês tem falta de sabedoria, peça-a a Deus, que a todos dá liberalmente, de forma alguma, sem restrições, e ser-lhe-á concedida. - Tiago 1:5",
     "A tua palavra é lâmpada para os meus pés e luz para o meu caminho. - Salmos 119:105",
@@ -75,8 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
     "Consagre ao Senhor tudo o que você faz, e os seus planos serão bem-sucedidos. - Provérbios 16:3",
     "Toda a Escritura é inspirada por Deus e útil para o ensino, para a repreensão, para a correção e para a instrução na justiça, para que o homem de Deus seja apto e plenamente preparado para toda boa obra. - 2 Timóteo 3:16-17",
     "Nele estão escondidos todos os tesouros da sabedoria e do conhecimento. - Colossenses 2:3",
-
-    // Perdão e Graça
     "Se confessarmos os nossos pecados, ele é fiel e justo para nos perdoar os pecados e nos purificar de toda injustiça. - 1 João 1:9",
     "Pois vocês são salvos pela graça, por meio da fé, e isto não vem de vocês, é dom de Deus; não por obras, para que ninguém se glorie. - Efésios 2:8-9",
     "Pois o salário do pecado é a morte, mas o dom gratuito de Deus é a vida eterna em Cristo Jesus, nosso Senhor. - Romanos 6:23",
@@ -87,8 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
     "Assim como o oriente está longe do ocidente, assim ele afasta de nós as nossas transgressões. - Salmos 103:12",
     "Em quem temos a redenção, a saber, o perdão dos pecados. - Colossenses 1:14",
     "O Senhor não demora em cumprir a sua promessa, como alguns a julgam demora. Pelo contrário, ele é paciente com vocês, não querendo que ninguém pereça, mas que todos cheguem ao arrependimento. - 2 Pedro 3:9",
-
-    // Paz e Descanso
     "Deixo-lhes a paz; a minha paz lhes dou. Não a dou como o mundo a dá. Não se perturbem os seus corações, nem tenham medo. - João 14:27",
     "E a paz de Deus, que excede todo o entendimento, guardará o coração e a mente de vocês em Cristo Jesus. - Filipenses 4:7",
     "Em paz me deito e logo durmo, pois só tu, Senhor, me fazes viver em segurança. - Salmos 4:8",
@@ -96,8 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
     "Tu guardarás em perfeita paz aquele cujo propósito está firme, porque em ti confia. - Isaías 26:3",
     "Que a paz de Cristo seja o juiz em seus corações, visto que vocês foram chamados para viver em paz, como membros de um só corpo. E sejam agradecidos. - Colossenses 3:15",
     "Que o Deus da esperança os encha de toda alegria e paz, por meio da fé, para que vocês transbordem de esperança, pelo poder do Espírito Santo. - Romanos 15:13",
-
-    // Vida e Propósito
     "Fui crucificado com Cristo. Assim, já não sou eu quem vive, mas Cristo vive em mim. A vida que agora vivo no corpo, vivo-a pela fé no Filho de Deus, que me amou e se entregou por mim. - Gálatas 2:20",
     "Portanto, se alguém está em Cristo, é nova criação. As coisas antigas já passaram; eis que surgiram coisas novas! - 2 Coríntios 5:17",
     "Tu criaste o íntimo do meu ser e me teceste no ventre de minha mãe. Eu te louvo porque me fizeste de modo especial e admirável. Tuas obras são maravilhosas! Digo isso com convicção. - Salmos 139:13-14",
@@ -140,28 +126,29 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 500);
   });
   
-  // --- Lógica do QR Code ---
+  // --- Lógica do QR Code CORRIGIDA ---
   qrCodeButton.addEventListener('click', () => {
+    console.log("Botão 'Gerar QR Code' clicado."); // Adicionado para depuração
     qrCodeModal.classList.remove('hidden');
-    setTimeout(() => {
-      const currentUrl = "https://humbertorodrigues13.github.io/Digital-2025/";
-      const qrCodeColor = fixedPrimaryColor;
+    
+    // Removi o setTimeout, a geração acontece imediatamente
+    const currentUrl = "https://humbertorodrigues13.github.io/Digital-2025/";
+    const qrCodeColor = fixedPrimaryColor;
 
-      if (!qrcode) {
+    if (!qrcode) {
         qrcode = new QRious({
-          element: qrCodeCanvas,
-          value: currentUrl,
-          size: 200,
-          padding: 10,
-          foreground: qrCodeColor
+            element: qrCodeCanvas,
+            value: currentUrl,
+            size: 200,
+            padding: 10,
+            foreground: qrCodeColor
         });
-      } else {
+    } else {
         qrcode.set({
-          value: currentUrl,
-          foreground: qrCodeColor
+            value: currentUrl,
+            foreground: qrCodeColor
         });
-      }
-    }, 50);
+    }
   });
 
   qrModalClose.addEventListener('click', () => {
@@ -174,12 +161,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // --- Função da foto de perfil ---
+  // A função original procurava por uma classe que não existia no HTML.
+  // Por favor, garanta que a tag <div> que contém a imagem tenha a classe "profile-pic-container".
   function moveProfilePic() {
     const profilePicContainer = document.querySelector('.profile-pic-container');
-    profilePicContainer.classList.add('animate-bounce-once');
-    setTimeout(() => {
-      profilePicContainer.classList.remove('animate-bounce-once');
-    }, 1000);
+    if (profilePicContainer) {
+      profilePicContainer.classList.add('animate-bounce-once');
+      setTimeout(() => {
+        profilePicContainer.classList.remove('animate-bounce-once');
+      }, 1000);
+    }
   }
   window.moveProfilePic = moveProfilePic;
 });
