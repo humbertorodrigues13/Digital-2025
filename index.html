@@ -1,1 +1,371 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="h-full">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cartão Vendedor Humberto Rodrigues - Novo Design</title>
 
+  <!-- Meta Tags Chamativas para SEO e Compartilhamento Social -->
+  <meta name="description" content="Humberto Rodrigues - Seu Consultor de Vendas na APA Móveis em Manaus. Móveis que transformam seu lar! Contato: (92) 98844-4395."/>
+  
+  <!-- Open Graph Tags (para Facebook, LinkedIn, WhatsApp) -->
+  <meta property="og:title" content="Humberto Rodrigues - Consultor de Vendas APA Móveis"/>
+  <meta property="og:description" content="Móveis que transformam seu lar! Fale comigo e encontre o ideal para você."/>
+  <meta property="og:image" content="https://i.supaimg.com/7cabd937-549e-4175-8cd6-3b6fa61226a0.jpg"/> <!-- Use a URL da sua foto de perfil -->
+  <meta property="og:url" content="https://humbertorodrigues13.github.io/Digital-2025/"/> <!-- URL REAL DO CARTÃO -->
+  <meta property="og:type" content="profile"/>
+  <meta property="og:site_name" content="Cartão de Vendas Digital"/>
+
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:site" content="@SeuTwitterAqui"/> <!-- Opcional: Seu handle do Twitter -->
+  <meta name="twitter:title" content="Humberto Rodrigues - Consultor de Vendas APA Móveis"/>
+  <meta name="twitter:description" content="Móveis que transformam seu lar! Fale comigo e encontre o ideal para você."/>
+  <meta name="twitter:image" content="https://i.supaimg.com/7cabd937-549e-4175-8cd6-3b6fa61226a0.jpg"/> <!-- Use a URL da sua foto de perfil -->
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter (para um visual limpo e moderno) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome para ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- QRious library for QR code generation -->
+  <script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js"></script>
+
+  <style>
+    /* Configurações de variáveis CSS (agora fixas, sem troca de tema) */
+    :root {
+      --primary-color: #10B981; /* Verde fixo */
+      --dark-primary-color: #059669; /* Verde escuro fixo */
+      --light-bg-color: #F0FDF4; /* Fundo claro fixo */
+      --gradient-start: #D1FAE5; /* Gradiente de fundo fixo */
+      --gradient-end: #A7F3D0; /* Gradiente de fundo fixo */
+      --text-color: #374151; /* Cor de texto principal fixa */
+      --text-light-color: #6B7280; /* Cor de texto secundária fixa */
+      --primary-color-rgb: 16, 185, 129; /* RGB para a sombra fixa */
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      @apply min-h-screen flex items-center justify-center p-4;
+      height: 100%; /* Garante que o body ocupe 100% da altura da viewport */
+      background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+      transition: background 0.3s ease; /* Transição suave para o background */
+    }
+
+    /* Estilos customizados para o cartão */
+    .card-custom-shadow {
+      box-shadow: 0 20px 50px rgba(var(--primary-color-rgb), 0.2); /* Sombra com cor do tema */
+      transition: box-shadow 0.3s ease; /* Transição suave para a sombra */
+    }
+
+    /* Efeito de brilho nos botões */
+    .button-shine::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.3);
+      transform: skewX(-30deg);
+      transition: all 0.6s ease;
+    }
+
+    .button-shine:hover::after {
+      left: 100%;
+    }
+
+    /* Animação para a mensagem */
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .message-animation {
+      animation: slideInUp 0.5s ease-out forwards;
+    }
+
+    /* Animação de "bounce" para a foto de perfil */
+    @keyframes bounce-once {
+      0%, 100% { transform: translateY(0); }
+      25% { transform: translateY(-10px); }
+      50% { transform: translateY(0); }
+      75% { transform: translateY(-5px); }
+    }
+    .animate-bounce-once {
+      animation: bounce-once 1s ease-in-out;
+    }
+
+    /* ANIMAÇÃO PARA O TEXTO DO VERSÍCULO DOURADO */
+    @keyframes golden-glow {
+      0%, 100% { 
+        text-shadow: 0 0 5px rgba(255, 215, 0, 0.5),
+                     0 0 10px rgba(255, 215, 0, 0.5);
+      }
+      50% { 
+        text-shadow: 0 0 10px rgba(255, 215, 0, 0.8),
+                     0 0 20px rgba(255, 215, 0, 0.8);
+      }
+    }
+    .golden-text {
+      background: linear-gradient(
+        180deg,
+        #ffd700,  /* Ouro */
+        #ffc107,  /* Âmbar */
+        #b8860b   /* Dourado escuro */
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: #ffd700; /* Fallback */
+      font-weight: 700;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+      animation: golden-glow 2.5s ease-in-out infinite;
+    }
+
+    /* Estilos para modais (apenas QR Code agora) */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 50;
+      display: none; /* Garante que o modal esteja oculto por padrão */
+    }
+    .modal-content {
+      background-color: white;
+      padding: 1.5rem; /* p-6 */
+      border-radius: 0.5rem; /* rounded-lg */
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-xl */
+      text-align: center;
+      position: relative;
+      max-width: 32rem; /* max-w-lg */
+      width: 91.666667%; /* w-11/12 */
+      animation: fadeInScale 0.3s ease-out forwards;
+    }
+    .modal-close {
+      position: absolute;
+      top: 0.5rem; /* top-2 */
+      right: 0.5rem; /* right-2 */
+      color: #6B7280; /* text-gray-500 */
+      cursor: pointer;
+      font-size: 1.5rem; /* text-2xl */
+    }
+    .modal-close:hover {
+      color: #374151; /* hover:text-gray-700 */
+    }
+  </style>
+</head>
+<body class="antialiased">
+  <div class="card-custom-shadow bg-white rounded-3xl p-12 max-w-2xl w-full text-center relative overflow-hidden transform transition-all duration-500 hover:scale-[1.01]">
+    <!-- Detalhe de cor no topo -->
+    <div class="absolute top-0 left-0 w-full h-2 rounded-t-3xl" style="background: linear-gradient(90deg, var(--primary-color), var(--dark-primary-color));"></div>
+
+    <!-- Container da foto de perfil -->
+    <div class="relative w-32 h-32 mx-auto -mt-10 mb-6 rounded-full border-4 border-white shadow-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105" onclick="moveProfilePic()">
+      <!-- FOTO DE PERFIL: VERIFIQUE E SUBSTITUA A URL ABAIXO SE NECESSÁRIO -->
+      <img class="profile-pic w-full h-full object-cover rounded-full transition-transform duration-500 hover:scale-110" 
+           src="https://i.supaimg.com/7cabd937-549e-4175-8cd6-3b6fa61226a0.jpg" 
+           alt="Foto de Perfil de Humberto Rodrigues"
+           >
+    </div>
+
+    <h1 class="text-3xl font-bold mb-2" style="color: var(--text-color);">Humberto Rodrigues</h1>
+    <h2 class="text-lg font-medium mb-4" style="color: var(--text-light-color);">Consultor de Vendas</h2>
+    
+    <!-- VERSÍCULO FIXO COM EFEITO DOURADO -->
+    <p class="text-base golden-text font-bold mb-6">Tudo posso naquele que me fortalece. - Filipenses 4:13</p>
+
+    <!-- NOVO: Container para o versículo aleatório (inicialmente oculto) -->
+    <div id="bibleVerseContainer" class="hidden text-base font-bold text-gray-700 mb-6 px-4 py-2 rounded-xl" style="color: var(--primary-color);">
+        <!-- O versículo será inserido aqui pelo JavaScript -->
+    </div>
+    
+    <!-- NOVO: Botão para gerar o versículo aleatório -->
+    <button id="randomVerseButton" class="button-shine relative flex items-center justify-center gap-3 px-6 py-3 bg-gray-200 text-gray-800 font-semibold rounded-full shadow-md hover:bg-gray-300 transition-all duration-300 transform hover:-translate-y-1 mb-6 mx-auto max-w-xs">
+      <i class="fas fa-book-open text-xl"></i> Versículo do Dia
+    </button>
+
+    <!-- Botão para o Vídeo de Apresentação (link direto) -->
+    <a id="videoButton" class="button-shine relative flex items-center justify-center gap-3 px-6 py-3 bg-gray-200 text-gray-800 font-semibold rounded-full shadow-md hover:bg-gray-300 transition-all duration-300 transform hover:-translate-y-1 mb-6 mx-auto max-w-xs" href="https://youtu.be/Luccp20la4g" target="_blank">
+      <i class="fas fa-video text-xl"></i> Assistir Vídeo
+    </a>
+
+    <!-- Botão Ligar Agora -->
+    <a id="callButton" class="button-shine relative flex items-center justify-center gap-3 px-6 py-3 bg-gray-200 text-gray-800 font-semibold rounded-full shadow-md hover:bg-gray-300 transition-all duration-300 transform hover:-translate-y-1 mb-6 mx-auto max-w-xs" href="tel:+5592988444395">
+      <i class="fas fa-phone text-xl"></i> Ligar Agora
+    </a>
+    <!-- Mensagem para o botão Ligar Agora -->
+    <div id="callMessage" class="hidden font-semibold text-sm p-2 rounded-xl shadow-inner message-animation mt-2" style="color: var(--primary-color); background-color: var(--light-bg-color);">
+      Iniciando chamada...
+    </div>
+
+    <!-- Informações de contato -->
+    <div class="space-y-3 mb-8" style="color: var(--text-color);">
+      <p class="flex items-center justify-center text-base">
+        <i class="fas fa-phone-alt mr-3" style="color: var(--primary-color);"></i> (92) 98844-4395
+      </p>
+      <p class="flex items-center justify-center text-base">
+        <i class="fas fa-envelope mr-3" style="color: var(--primary-color);"></i> apamoveis.humberto@gmail.com
+      </p>
+      <p class="flex items-center justify-center text-base">
+        <i class="fas fa-map-marker-alt mr-3" style="color: var(--primary-color);"></i> Shopping Cidade Leste - Manaus
+      </p>
+      <!-- Horário de Atendimento -->
+      <p class="flex items-center justify-center text-base">
+        <i class="fas fa-clock mr-3" style="color: var(--primary-color);"></i> Seg-Sáb: 9h-21h | Dom: 9h-15h
+      </p>
+    </div>
+
+    <!-- Botões de ação -->
+    <div class="space-y-4">
+      <a id="whatsappButton" class="button-shine relative flex items-center justify-center gap-3 px-6 py-3 text-white font-semibold rounded-full shadow-md transition-all duration-300 transform hover:-translate-y-1 hover:bg-[var(--dark-primary-color)]" style="background-color: var(--primary-color);" href="https://wa.me/5592988444395" target="_blank">
+        <i class="fab fa-whatsapp text-xl"></i> Fale comigo
+      </a>
+
+      <div id="message" class="hidden font-semibold text-lg p-3 rounded-xl shadow-inner message-animation" style="color: var(--primary-color); background-color: var(--light-bg-color);">
+        APA Móveis - Móveis que transformam
+      </div>
+
+      <a id="contactButton" class="button-shine relative flex items-center justify-center gap-3 px-6 py-3 bg-gray-200 text-gray-800 font-semibold rounded-full shadow-md hover:bg-gray-300 transition-all duration-300 transform hover:-translate-y-1" href="data:text/vcard;charset=utf-8,BEGIN:VCARD%0AVERSION:3.0%0AFN:Humberto%20Rodrigues%0ATEL:+5592988444395%0AEMAIL:apamoveis.humberto@gmail.com%0AEND:VCARD" download="Humberto_Rodrigues.vcf">
+        <i class="fas fa-id-card text-xl"></i> Salvar meu contato
+      </a>
+
+      <a id="locationButton" class="button-shine relative flex items-center justify-center gap-3 px-6 py-3 bg-gray-200 text-gray-800 font-semibold rounded-full shadow-md hover:bg-gray-300 transition-all duration-300 transform hover:-translate-y-1" href="https://www.google.com/maps/search/?api=1&query=Shopping+Cidade+Leste+Manaus" target="_blank">
+        <i class="fas fa-map-marked-alt text-xl"></i> Ver no Google Maps
+      </a>
+
+      <!-- Botão para mostrar o QR Code -->
+      <button id="qrCodeButton" class="button-shine relative flex items-center justify-center gap-3 px-6 py-3 bg-gray-200 text-gray-800 font-semibold rounded-full shadow-md hover:bg-gray-300 transition-all duration-300 transform hover:-translate-y-1">
+        <i class="fas fa-qrcode text-xl"></i> Gerar QR Code
+      </button>
+    </div>
+  </div>
+
+  <!-- Modal do QR Code (inicialmente oculto) -->
+  <div id="qrCodeModal" class="modal-overlay hidden">
+    <div class="modal-content">
+      <span id="qrModalClose" class="modal-close">&times;</span>
+      <h3 class="text-2xl font-bold mb-4" style="color: var(--primary-color);">Escaneie para Salvar o Cartão!</h3>
+      <canvas id="qrCodeCanvas" class="w-48 h-48 mx-auto border border-gray-300 rounded-lg" width="200" height="200"></canvas>
+      <p class="text-sm text-gray-500 mt-2">Compartilhe este QR Code para acesso rápido.</p>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const whatsappButton = document.getElementById('whatsappButton');
+      const messageElement = document.getElementById('message');
+      const callButton = document.getElementById('callButton');
+      const callMessage = document.getElementById('callMessage');
+      const qrCodeButton = document.getElementById('qrCodeButton');
+      const qrCodeModal = document.getElementById('qrCodeModal');
+      const qrModalClose = document.getElementById('qrModalClose');
+      const qrCodeCanvas = document.getElementById('qrCodeCanvas');
+      const randomVerseButton = document.getElementById('randomVerseButton');
+      const bibleVerseContainer = document.getElementById('bibleVerseContainer');
+
+      const fixedPrimaryColor = '#10B981';
+
+      let qrcode = null;
+
+      // --- Versículos da Bíblia ---
+      const bibleVerses = [
+        "O Senhor é o meu pastor; de nada terei falta. - Salmos 23:1",
+        "Porque Deus amou o mundo de tal maneira que deu o seu Filho unigênito, para que todo aquele que nele crê não pereça, mas tenha a vida eterna. - João 3:16",
+        "Confia no Senhor de todo o teu coração e não te estribes no teu próprio entendimento. - Provérbios 3:5",
+        "O Senhor te abençoe e te guarde; o Senhor faça resplandecer o seu rosto sobre ti e tenha misericórdia de ti. - Números 6:24-25",
+        "Mas buscai primeiro o reino de Deus, e a sua justiça, e todas essas coisas vos serão acrescentadas. - Mateus 6:33",
+        "O teu amor, Senhor, chega até os céus; a tua fidelidade, até às nuvens. - Salmos 36:5",
+        "Portanto, se alguém está em Cristo, é nova criação; as coisas antigas já passaram, eis que surgiram coisas novas. - 2 Coríntios 5:17",
+        "E sabemos que todas as coisas contribuem juntamente para o bem daqueles que amam a Deus, daqueles que são chamados segundo o seu propósito. - Romanos 8:28",
+        "Porque eu bem sei os pensamentos que tenho a vosso respeito, diz o Senhor; pensamentos de paz, e não de mal, para vos dar o fim que esperais. - Jeremias 29:11",
+        "O Senhor é a minha luz e a minha salvação; a quem temerei? O Senhor é a força da minha vida; de quem me recearei? - Salmos 27:1"
+      ];
+
+      // --- Lógica do Botão WhatsApp ---
+      whatsappButton.addEventListener('click', function() {
+        messageElement.classList.remove('hidden');
+        messageElement.classList.add('message-animation');
+      });
+
+      // --- Lógica do Botão Ligar Agora ---
+      callButton.addEventListener('click', function() {
+        callMessage.classList.remove('hidden');
+        callMessage.classList.add('message-animation');
+        setTimeout(() => {
+          callMessage.classList.add('hidden');
+          callMessage.classList.remove('message-animation');
+        }, 3000);
+      });
+
+      // --- Lógica do Botão Versículo Aleatório ---
+      randomVerseButton.addEventListener('click', () => {
+        const randomIndex = Math.floor(Math.random() * bibleVerses.length);
+        const selectedVerse = bibleVerses[randomIndex];
+
+        bibleVerseContainer.textContent = selectedVerse;
+        bibleVerseContainer.classList.remove('hidden');
+        bibleVerseContainer.classList.add('message-animation');
+        
+        setTimeout(() => {
+            bibleVerseContainer.classList.remove('message-animation');
+        }, 500);
+      });
+      
+      // --- Lógica do QR Code ---
+      qrCodeButton.addEventListener('click', () => {
+        qrCodeModal.classList.remove('hidden');
+        setTimeout(() => {
+          const currentUrl = "https://humbertorodrigues13.github.io/Digital-2025/";
+          const qrCodeColor = fixedPrimaryColor;
+
+          if (!qrcode) {
+            qrcode = new QRious({
+              element: qrCodeCanvas,
+              value: currentUrl,
+              size: 200,
+              padding: 10,
+              foreground: qrCodeColor
+            });
+          } else {
+            qrcode.set({
+              value: currentUrl,
+              foreground: qrCodeColor
+            });
+          }
+        }, 50);
+      });
+
+      qrModalClose.addEventListener('click', () => {
+        qrCodeModal.classList.add('hidden');
+      });
+
+      qrCodeModal.addEventListener('click', (e) => {
+        if (e.target === qrCodeModal) {
+          qrCodeModal.classList.add('hidden');
+        }
+      });
+
+      function moveProfilePic() {
+        const profilePicContainer = document.querySelector('.profile-pic-container');
+        profilePicContainer.classList.add('animate-bounce-once');
+        setTimeout(() => {
+          profilePicContainer.classList.remove('animate-bounce-once');
+        }, 1000);
+      }
+      window.moveProfilePic = moveProfilePic;
+    });
+    
+  </script>
+</body>
+</html>
